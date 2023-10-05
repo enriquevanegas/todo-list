@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import { TodoList } from "./components/TodoList";
+import { Card } from "./components/Card";
 import { v4 as uuid } from 'uuid'; //Para generar ID's aleatorios
+import './App.css';
 
 const KEY = 'todo-list';
 
@@ -16,7 +17,7 @@ export function App() {
     /* Recupera las tareas guardadas */
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem(KEY));
-        if(storedTodos) setTodos(storedTodos);
+        if (storedTodos) setTodos(storedTodos);
     }, []);
 
     /* Guardando ToDo en Local Storage */
@@ -53,18 +54,13 @@ export function App() {
     }
 
     return (
-        <>
-            <h1>ToDo List</h1>
-
-            <div id="new-task">
-                <input ref={inputAddTask} type="text" placeholder="Nueva tarea" />
-                <button onClick={handlerAddTask}> Add </button>
-                <button onClick={handlerClearCompleted}> Clear </button>
-            </div>
-
-            <TodoList todos={todos} toggleTodo={toggleTodo} />
-
-            <label>Te queda {todos.filter(task => !task.completed).length} tareas por completar.</label>
-        </>
+        <main>
+            <Card
+                inputAddTask={inputAddTask}
+                handlerAddTask={handlerAddTask}
+                handlerClearCompleted={handlerClearCompleted}
+                todos={todos}
+                toggleTodo={toggleTodo} />
+        </main>
     );
 }
