@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Card } from "./components/Card";
+import { Card } from './components/Card/Card'
 import { v4 as uuid } from 'uuid'; //Para generar ID's aleatorios
 import './App.css';
 
