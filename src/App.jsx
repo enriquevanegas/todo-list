@@ -42,15 +42,15 @@ export function App() {
     }
 
     const handlerClearCompleted = () => {
-        const newTodos = todos.filter(task => !task.completed);
-        setTodos(newTodos);
+        const todosNotCompleted = todos.filter(task => !task.completed);
+        setTodos(todosNotCompleted);
     }
 
     const toggleTodo = (id) => {
-        const newTodos = [...todos];
-        const task = newTodos.find(task => task.id === id);
+        const currentTodoList = [...todos];
+        const task = currentTodoList.find(task => task.id === id);
         task.completed = !task.completed;
-        setTodos(newTodos);
+        setTodos(currentTodoList);
     }
 
     return (
