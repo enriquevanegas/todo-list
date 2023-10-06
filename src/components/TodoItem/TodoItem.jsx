@@ -1,4 +1,5 @@
 import React from 'react';
+import './TodoItem.css';
 
 export function TodoItem({ todo, toggleTodo }) {
 
@@ -11,7 +12,7 @@ export function TodoItem({ todo, toggleTodo }) {
     }
 
     return (
-        <li id={id}>
+        <li className='todo-list-item' id={id}>
             <input type="checkbox" checked={completed} onChange={handleTaskCompleted} />
             {task}
         </li>

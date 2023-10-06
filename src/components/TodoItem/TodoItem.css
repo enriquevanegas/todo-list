@@ -1,0 +1,17 @@
+
+li.todo-list-item {
+    display: flex;
+    list-style: none;
+    font-size: 1.5em;
+    color: #727272;
+}
+
+li.todo-list-item:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+li.todo-list-item input[type="checkbox"] {
+    width: 1rem;
+    cursor: pointer;
+    margin-right: 9px;
+}
