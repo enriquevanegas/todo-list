@@ -1,0 +1,83 @@
+* {
+    background-color: #f7f7f7;
+}
+
+.main-title {
+    background-color: transparent;
+}
+.container {
+    width: 500px;
+    height: auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    border: 1px solid #d1d1d1;
+    border-radius: 15px;
+}
+
+.container .input-group {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .input-group input {
+    width: 78%;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px 0px 0px 10px;
+    padding: 9px;
+    color: #727272;
+    font-size: 1.2em;
+}
+
+.container .input-group input::placeholder {
+    color: #b3b3b3;
+}
+
+.container .input-group input:focus-visible {
+    outline: none !important;
+}
+
+.container .input-group button {
+    padding: 9px;
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
+    color: #9d9d9d;
+}
+
+.container .input-group button:hover {
+    background-color: #f0f0f0;
+    color: #767676;
+} 
+
+.container .input-group button#add {
+    border-left: none;
+    border-right: none;
+}   
+
+.container .input-group button:last-child {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.list-container {
+    width: 100%;
+    max-height: 360px;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+}
+.list-container p.no-items {
+    color: #dbdbdb;
+    font-size: 2em;
+    margin: auto;
+}
+
+label.info-label {
+    color: #828282;
+}
+
+.line {
+    border-top: 1px solid #d1d1d1;
+}

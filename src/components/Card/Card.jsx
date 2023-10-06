@@ -1,21 +1,32 @@
 import React from "react";
 import { TodoList } from "../TodoList/TodoList";
+import './Card.css'
 
 export function Card({ inputAddTask, handlerAddTask, handlerClearCompleted, todos, toggleTodo }) {
 
     return (
         <>
-            <h1>ToDo List</h1>
+            <h1 className="main-title">ToDo List</h1>
 
-            <div id="new-task">
-                <input ref={inputAddTask} type="text" placeholder="Nueva tarea" />
-                <button onClick={handlerAddTask}> Add </button>
-                <button onClick={handlerClearCompleted}> Clear </button>
+            <div className="container">
+
+                <div className="input-group">
+                    <input ref={inputAddTask} type="text" placeholder="New task" autoFocus />
+                    <button id="add" onClick={handlerAddTask}> Add </button>
+                    <button id="clear" onClick={handlerClearCompleted}> Clear </button>
+                </div>
+
+                <div className="list-container">
+                    <TodoList todos={todos} toggleTodo={toggleTodo} />
+                </div>
+
+                {
+                    todos.length > 0
+                        ? <label className="info-label">You have {todos.filter(task => !task.completed).length} task to be completed.</label>
+                        : <hr className="line" />
+                }
+
             </div>
-
-            <TodoList todos={todos} toggleTodo={toggleTodo} />
-
-            <label>Te queda {todos.filter(task => !task.completed).length} tareas por completar.</label>
         </>
     );
 }
